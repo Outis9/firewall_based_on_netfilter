@@ -1,0 +1,16 @@
+{
+    "files.associations": {
+        "firewall.h": "c",
+        "netfilter.h": "c",
+        "netfilter_ipv4.h": "c",
+        "tcp.h": "c",
+        "skbuff.h": "c",
+        "netdevice.h": "c",
+        "module.h": "c",
+        "uaccess.h": "c",
+        "types.h": "c",
+        "getopt.h": "c",
+        "string.h": "c",
+        "assert.h": "c"
+    }
+}
