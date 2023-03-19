@@ -232,6 +232,7 @@ int hook_sockopt_get(struct sock *sk, int optval, void __user *user, int *len){
 }
 
 //init module
+// use int registerFilter(void){} if func below is not usable
 int init_module(){
     int i = 0;
     rules.tcp_status = 0;
@@ -295,6 +296,7 @@ int init_module(){
     return 0;
 }
 
+// use void removeFilter(void){} if func below is not usable
 void cleanup_module(){
     nf_unregister_net_hook(&init_net, &nf_hook_localin);
     nf_unregister_net_hook(&init_net, &nf_hook_localout);
@@ -309,7 +311,8 @@ void cleanup_module(){
 }
 
 // !need test!
-// module_init(init);
+// uncommit next two lines if meet problem!
+// module_init(registerFilter);
 // module_exit(removeFilter);
 
 MODULE_LICENSE("GPL");
