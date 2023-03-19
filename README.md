@@ -1,4 +1,4 @@
-# security_tech_final_project
+# 计算机安全保密技术期末项目
 ## 题目要求:
 基于Netfilter或者Libnetfilter_queue开发一个静态包过滤防火墙，具体要求：
 （1）对符合指定的网络协议（TCP或UDP）、源IP地址、目的IP地址、源端口和目的端口的报文进行阻止。
@@ -6,19 +6,25 @@
 
 ## 目前实现
 1. 对符合指定的TCP/UDP/ICMP协议进行过滤
-2. 对相应ip地址，端口进行过滤
-3. 可以对多个ip地址和多个端口进行过滤
+2. 对相应IP地址，端口进行过滤
+3. 可以对多个IP地址和多个端口进行过滤
 4. 完善了flush函数，可以清空存在的所有规则
+4. 可以list出当前已经施加了的所有规则
 
 
 ## 需要开发
-1. 分清源端口，目的端口，源地址，目的地址   done
-2. 命令行工具开发                         done
+- [x] 分清源端口，目的端口，源地址，目的地址
+
+- [x] 命令行工具开发
 
 ## BUG
-1. ip / port 输入合法性问题               done
-2. ban list 中重复出现问题
-3. 输入两遍指令，解除封禁效果问题          done
+- [x] IP地址以及port的输入合法性检测问题
+
+- [ ] ban list中重复出现问题
+
+- [x] 输入两遍指令后会解除当前已封禁的状态的问题
+
+## 示例
 
 ~~~shell
 sudo ./dropit -s 47.100.167.12 -j drop
@@ -28,6 +34,7 @@ sudo ./dropit -p udp -j drop
 sudo ./dropit -p icmp -j drop
 sudo ./dropit -z 53 -j drop
 sudo ./dropit -x 53 -j drop
+sudo ./dropit -l
 sudo ./dropit -h
 sudo ./dropit -f
 ~~~
