@@ -19,7 +19,7 @@
 
 - [x] 命令行工具开发
 
-- [ ] 添加.gitingore
+- [ ] 添加.gitignore
 
 ## BUG
 - [x] IP地址以及port的输入合法性检测问题
